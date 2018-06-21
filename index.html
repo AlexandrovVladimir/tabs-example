@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tabs</title>
+</head>
+<body>
+	<div id="tabs-container">
+    <ul class="tabs-menu">
+        <li class="current" rel="tab1"><a>Гарантия</a></li>
+        <li rel="tab2"><a>Материалы</a></li>
+        <li rel="tab3"><a>Общие</a></li>
+    </ul>
+    <div class="tab">
+		<h3 class="d_active tab_drawer_heading" rel="tab1">Гарантия</h3>
+        <div id="tab1" class="tab-content">
+            <p class="col-md-3 col-sm-3 col-xs-4">Производство</p>
+            <p class="col-md-2 col-sm-2 col-xs-4">Украина</p>
+            <p class="clearfix"></p>
+			<p class="col-md-3 col-sm-3 col-xs-4">Гарантийный срок</p>
+            <p class="col-md-2 col-sm-2 col-xs-4">12 месяцев</p>
+            <p class="clearfix"></p>
+            <p class="col-md-3 col-sm-3 col-xs-4">Срок службы</p>
+            <p class="col-md-2 col-sm-2 col-xs-4">8 лет</p>
+        </div>
+		<h3 class="d_active tab_drawer_heading" rel="tab2">Материалы</h3>
+        <div id="tab2" class="tab-content">
+            <p>Donec semper dictum sem, quis pretium sem malesuada non. Proin venenatis orci vel nisl porta sollicitudin. Pellentesque sit amet massa et orci malesuada facilisis vel vel lectus. Etiam tristique volutpat auctor. Morbi nec massa eget sem ultricies fermentum id ut ligula. Praesent aliquet adipiscing dictum. Suspendisse dignissim dui tortor. Integer faucibus interdum justo, mattis commodo elit tempor id. Quisque ut orci orci, sit amet mattis nulla. Suspendisse quam diam, feugiat at ullamcorper eget, sagittis sed eros. Proin tortor tellus, pulvinar at imperdiet in, egestas sed nisl. Aenean tempor neque ut felis dignissim ac congue felis viverra. </p>
+        </div>
+		<h3 class="d_active tab_drawer_heading" rel="tab3">Общие</h3>
+        <div id="tab3" class="tab-content">
+            <p>Duis egestas fermentum ipsum et commodo. Proin bibendum consectetur elit, hendrerit porta mi dictum eu. Vestibulum adipiscing euismod laoreet. Vivamus lobortis tortor a odio consectetur pulvinar. Proin blandit ornare eros dictum fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur laoreet, ante aliquet molestie laoreet, lectus odio fringilla purus, id porttitor erat velit vitae mi. Nullam posuere nunc ut justo sollicitudin interdum. Donec suscipit eros nec leo condimentum fermentum. Nunc quis libero massa. Integer tempus laoreet lectus id interdum. Integer facilisis egestas dui at convallis. Praesent elementum nisl et erat iaculis a blandit ligula mollis. Vestibulum vitae risus dui, nec sagittis arcu. Nullam tortor enim, placerat quis eleifend in, viverra ac lacus. Ut aliquam sapien ut metus hendrerit auctor dapibus justo porta. </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<style>
+	/*tabs*/
+#tabs-container{
+	margin-top: 25px;
+	overflow: hidden;
+}
+.tabs-menu {
+    height: 40px;
+    clear: both;
+}
+.tabs-menu li {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    width: 175px;
+    text-align: center;
+    border: none;
+}
+.tabs-menu li.current {
+    position: relative;
+    background-color: #000;
+    border-radius: 20px;
+    width: 175px;
+    text-align: center;
+    z-index: 5;
+}
+.tabs-menu li.current a{
+    color: #fff;
+    font-family: OpenSans-SemiBold;
+    font-size: 16px;
+    padding: 0;
+}
+.tabs-menu li a {
+	display: block;
+    color: #000;
+    font-family: OpenSans-SemiBold;
+    font-size: 16px;
+    text-decoration: none; 
+}
+.tabs-menu .current a {
+    color: #2e7da3;
+}
+.tab {
+    background-color: #fff;
+    width: auto;
+}
+.tab-content {
+    width: auto;
+    padding: 20px 0 0 0;
+    display: none;
+}
+.tab-content p{
+	font-family: OpenSans-SemiBold;
+	font-size: 16px;
+	padding: 0;
+}
+#tab-1 {
+ display: block;   
+}
+.tab_last { border-right: 1px solid #333; }
+.tab_drawer_heading { display: none; }
+#tab1, 
+#tab2,
+#tab3,
+#tab4{
+	overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+	.tabs-menu {
+		display: none;
+	}
+	.tab_drawer_heading {
+		background-color: #eee;
+		border-top: 1px solid #000;
+		color: #000;
+		margin: 0;
+		padding: 5px 20px;
+		display: block;
+		cursor: pointer;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.d_active {
+/*		background-color: #666;
+		color: #fff;*/
+	}
+}
+/*/tabs*/
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script>
+	$(".tab-content").hide();
+    $(".tab-content:first").show();
+
+    /* if in tab mode */
+    $("ul.tabs-menu li").click(function() {
+		
+      $(".tab-content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();		
+		
+      $("ul.tabs-menu li").removeClass("current");
+      $(this).addClass("current");
+
+	  $(".tab_drawer_heading").removeClass("d_active");
+	  $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+	  
+    });
+	/* if in drawer mode */
+	$(".tab_drawer_heading").click(function() {
+      
+      $(".tab-content").hide();
+      var d_activeTab = $(this).attr("rel"); 
+      $("#"+d_activeTab).fadeIn();
+	  
+	  $(".tab_drawer_heading").removeClass("d_active");
+      $(this).addClass("d_active");
+	  
+	  $("ul.tabs-menu li").removeClass("active");
+	  $("ul.tabs-menu li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+	
+	
+	/* Extra class "tab_last" 
+	   to add border to right side
+	   of last tab */
+	$('ul.tabs li').last().addClass("tab_last");
+</script>
